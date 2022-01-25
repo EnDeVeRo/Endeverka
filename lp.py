@@ -372,7 +372,6 @@ while True:
                     try:
                         params = {"q": event.text.split(" ", maxsplit=1)[1], "sort": 3, "adult": 1, "filters": "short", "count": 10, "extended": 1}
                         print(params)
-                        logger.info(Fore.GREEN + f"Запросил видосик с названием {q}")
                         response, atts = vk.method("video.search", params)["items"], []
                         for i in response:
                             atts.append(f"""video{i["owner_id"]}_{i["id"]}""")
